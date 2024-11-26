@@ -1,0 +1,95 @@
+{% comment %} {% extends "base.html" %}
+
+
+
+{% block title %}
+    Signup
+{% endblock title %}
+
+
+{% block hero %}
+    <h1 style="text-align:center;">This is Signup Page </h1>
+
+
+
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div> <label for="{{ form.username.id_for_label }}">Username:</label> {{ form.username }} </div> 
+        <div> <label for="{{ form.email.id_for_label }}">Email:</label> {{ form.email }} </div> 
+        <div> <label for="{{ form.password1.id_for_label }}">Password:</label> {{ form.password1 }} </div> 
+        <div> <label for="{{ form.password2.id_for_label }}">Confirm Password:</label> {{ form.password2 }} </div>
+
+        
+         <button type="submit">SignUp</button>
+
+         <a class="nav-link active" aria-current="page" href="{% url "login" %}">Already User?</a>
+
+    </form> 
+
+{% endblock hero %} {% endcomment %}
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+    <style>
+        .message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Display messages -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+
+        <button type="submit">Create Account</button>
+    </form>
+
+    <script>
+        // Check if there are success messages
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                   
+                    setTimeout(function() {
+                        window.location.href = "{% url 'login' %}";
+                    }, 10000); 
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </script>
+
+</body>
+</html>

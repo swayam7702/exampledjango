@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+     Home
+{% endblock title %}
+
+
+{% block hero %}
+<h1 class="text-center h3" >Students Data From Database </h1>
+<table class="table m-3">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Course</th>
+                <th scope="col">Address</th>
+                <th scope="col">Date Of Birth</th>
+            </tr>
+        </thead>
+        {% for record in data %}
+              <tr>
+                <td>{{record.id}}</td>
+                <td>{{record.name}}</td>
+                <td>{{record.course}}</td>
+                <td>{{record.addres}}</td>
+                <td>{{record.dob}}</td>
+              </tr>
+        {% endfor %}
+    </table>
+    <h1>This is Home Page</h1>
+{% endblock hero %}

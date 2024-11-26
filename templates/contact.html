@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    Contact
+{% endblock title %}
+
+
+
+{% block hero %}
+<h1>This is Contact Page</h1>
+    {% for value in info %}
+        <img class="profile" src={{value.profile_pic.url}}  width="200px" alt="profile">
+    {% endfor %}
+{% endblock hero %}

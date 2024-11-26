@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Recordings
+{% endblock title %}
+
+
+
+{% block hero %}
+<h1>This is Recordings Page</h1>
+
+    {% for record in recordings %}
+        <div class="card w-50">
+            <h1>{{record.title}}</h1>
+            
+            {% if record.thumbnail %}
+                <img src="{{ record.thumbnail.url }}" alt="user image" class="card-img-top">
+            {% else %}
+                <img src="{% static 'Imgs/slide1.png' %}" width="400" alt="default image" class="card-img-top">
+            {% endif %}
+            {% comment %} <img src={{record.thumbnail.url}} alt="record-thumbnail" width="400"> {% endcomment %}
+
+            {% if record.video %}
+                <video controls autoplay width="300">
+                    <source src="{{ record.video.url }}">
+                </video>
+            {% else %}
+                <img src="{% static 'Imgs/slide1.png' %}" width="400" alt="default image" class="card-img-top">
+            {% endif %}
+            
+        </div>
+    {% endfor %}
+    
+{% endblock hero %}

@@ -1,0 +1,48 @@
+.mybutton{
+    background-color: rgb(47, 255, 220);
+    color: black;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 10px 15px;
+    
+
+}
+.navbar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    width: 100%;
+}
+.dummy{
+    height: 56px;
+}
+.mybutton:hover{
+    border: 1px solid rgb(47, 255, 220);
+    color: rgb(47, 255, 220);
+    background-color: transparent;
+}
+.mydiv{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.footer{
+    padding:20px;
+    background-color:black;
+    color:white;
+    text-align: center
+}
+.hero{
+    height:fit-content;
+}
+.hero .profile{
+    width: 200px;
+}
+
+.hero .form form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

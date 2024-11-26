@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+    Register
+{% endblock title %}
+{% block hero %}
+    <h1>This is Form Page</h1>
+
+    <div class="form">
+        <form  method="post" style="display: flex;flex-direction: column; width: 500px;align-items: center;gap: 10px;">
+            {% csrf_token %}
+            <div class="form-group" style="display: flex;justify-content: space-between;gap: 5px;">
+                <label for="name">Enter Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="form-group" style="display: flex;justify-content: space-between;gap: 5px;">
+                <label for="empId">Enter Emp ID</label>
+                <input type="number" name="emp_id" id="empId">
+            </div>
+            <div class="form-group" style="display: flex;justify-content: space-between;gap: 5px;">
+                <label for="role">Enter Role</label>
+                <input type="text" name="role" id="role">
+            </div>
+            <div class="form-group" style="display: flex;justify-content: space-between;gap: 5px;">
+                <label for="dj">Choose Joined Date</label>
+                <input type="date" name="date_joined" id="dj">
+            </div>
+            <div class="form-group" style="display: flex;justify-content: space-between;gap: 5px;">
+                <label for="address">Enter Full Address</label>
+               <textarea name="address" id="address">
+    
+               </textarea>
+            </div>
+            <div class="form-group" style="display: flex;justify-content: space-between;gap: 5px;">
+                <label for="city">Enter City</label>
+                <input type="text" name="city" id="city">
+            </div>
+            <div class="form-group" style="display: flex;justify-content: space-between;gap: 5px;">
+                <label for="cn">Enter Company Name</label>
+                <input type="text" name="company_name" id="cn">
+            </div>
+            <div class="form-group" style="display: flex;justify-content: space-between;gap: 5px;">
+                <label for="cl">Enter Company Location</label>
+                <input type="text" name="company_location" id="cl">
+            </div>
+            <div class="form-group" style="display: flex;justify-content: space-between;gap: 5px;">
+                <label for="quali">Enter Your Qualification</label>
+                <input type="text" name="qualification" id="quali">
+            </div>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+{% endblock hero %}
+
+{{data}}

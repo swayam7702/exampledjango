@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Upload File
+{% endblock title %}
+
+
+
+{% block hero %}
+<h1>This is Upload Page</h1>
+  
+
+{% comment %} <form action="" method="post">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label for="title">Enter Video Title</label>
+        <input placeholder="Enter Video Title....." type="text" name="title" id="title">
+    </div>
+    <div class="form-group">
+        <label for="tn">Upload Thumbnail</label>
+        <input  type="file" name="thumbnail" id="tn" accept="image/*">
+    </div>
+    <div class="form-group">
+        <label for="uv">Upload Video</label>
+        <input  type="file" name="video" id="uv" accept="video/*">
+    </div>
+    <input type="submit" value="Add Record">
+
+</form> {% endcomment %}
+
+
+
+<form action="" method="post" enctype="multipart/form-data">  <!-- Add enctype -->
+    {% csrf_token %}
+    
+    <div class="form-group">
+        <label for="title">Enter Video Title</label>
+        <input placeholder="Enter Video Title....." type="text" name="title" id="title" required>
+    </div>
+    <div class="form-group">
+        <label for="tn">Upload Thumbnail</label>
+        <input type="file" name="thumbnail" id="tn" accept="image/*" required>
+    </div>
+    <div class="form-group">
+        <label for="uv">Upload Video</label>
+        <input type="file" name="video" id="uv" accept="video/*" required>
+    </div>
+    <input type="submit" value="Add Record">
+</form>
+
+
+{% endblock hero %}
